@@ -2,7 +2,6 @@
 data <- rnorm(10000,0,1)
 
 #parameters 
-#edit test
 n <- length(data)
 b <- n^.5
 s <- 10
