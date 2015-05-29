@@ -34,3 +34,23 @@ for (i in 1:s) {
   abline(v=subsamples.means[i],col='red')
   print(abs(subsamples.means[i]-mean(stats.matrix[i,])))
 }
+
+#using the known sampling distribution of mean
+#redrawing random samples
+stats.known <- c()
+for (i in 1:r) {
+  data.test <- rnorm(100,0,1)
+  stats.known[i] <- mean(data.test)
+}
+hist(stats.known)
+quantile(stats.known,c(0.025,.975))
+
+#regular bootstrap with n=100
+stats.known <- c()
+data.test <- rnorm(100,0,1)
+for (i in 1:r) {
+  data.boot <- sample(data.test,100,replace=T)
+  stats.known[i] <- mean(data.boot)
+}
+hist(stats.known)
+quantile(stats.known,c(0.025,.975))
