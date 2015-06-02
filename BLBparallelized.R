@@ -6,7 +6,7 @@ library(doParallel)
 #parameters
 n <- 10000
 b <- n^.5
-s <- 10
+s <- 100
 r <- 10000
 
 output.matrix <- matrix(,nrow=100,ncol=11)
@@ -27,3 +27,5 @@ colnames(output.matrix) <- c('0.005','0.025','0.05','0.5','0.95','0.975','0.995'
                              'Length','Caught mu','below mu','above mu')
 
 write.table(output.matrix,file='BLB_n10000_b100_s25_r10000',row.names=F,col.names=T,sep=",")
+
+
