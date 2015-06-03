@@ -1,4 +1,4 @@
-source("~/Documents/Pomona College/SURP/bootstrap/BLBfunction.R")
+source("BLBfunction.R")
 
 library(foreach)
 library(doParallel)
@@ -14,6 +14,7 @@ output.matrix <- matrix(,nrow=100,ncol=11)
 for (i in 1:100) {
   data <- rnorm(n,0,1)
   BLB.output <- BLB(data,n,b,s,r)
+  print(BLB.output)
   output.matrix[i,1:7] <- BLB.output
 }
 
